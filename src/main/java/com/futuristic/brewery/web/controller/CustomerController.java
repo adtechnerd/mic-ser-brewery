@@ -2,6 +2,7 @@ package com.futuristic.brewery.web.controller;
 
 import com.futuristic.brewery.service.CustomerService;
 import com.futuristic.brewery.web.model.CustomerDto;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,4 +26,25 @@ public class CustomerController {
     public ResponseEntity<CustomerDto> getCustomer(@PathVariable("id") UUID id) {
         return new ResponseEntity<>(customerService.getCustomer(id), HttpStatus.OK);
     }
+
+    @PostMapping
+    public ResponseEntity addCustomer(@RequestBody CustomerDto customerDto) {
+        CustomerDto savedCustomer = customerService.addCustomer(customerDto);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", "api/v1/customer"+savedCustomer.getId().toString());
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
+    }
+
+    @PutMapping({"/{id}"})
+    public ResponseEntity updateCustomer(@PathVariable("id") UUID id, @RequestBody CustomerDto customerDto) {
+        CustomerDto dto = customerService.updateCustomer(id, customerDto);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteCustomer(@RequestBody CustomerDto customerDto) {
+        customerService.deleteCustomer(customerDto);
+    }
+
 }
