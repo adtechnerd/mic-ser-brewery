@@ -12,7 +12,7 @@ import java.util.UUID;
  * aditya created on 24/01/20
  */
 @RestController
-@RequestMapping("/api/customer")
+@RequestMapping("/api/v1/customer")
 public class CustomerController {
 
     private CustomerService customerService;
