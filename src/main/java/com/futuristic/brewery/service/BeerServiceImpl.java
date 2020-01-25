@@ -19,4 +19,9 @@ public class BeerServiceImpl implements BeerService {
     public BeerDto saveNewBeer(BeerDto beerDto) {
         return BeerDto.builder().id(UUID.randomUUID()).beerStyle(beerDto.getBeerStyle()).beerName(beerDto.getBeerName()).build();
     }
+
+    @Override
+    public void updateBeer(UUID beerId, BeerDto beerDto) {
+        //todo: add implementation
+    }
 }
