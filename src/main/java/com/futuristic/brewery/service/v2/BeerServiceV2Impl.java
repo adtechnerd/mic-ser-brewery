@@ -1,4 +1,4 @@
-package com.futuristic.brewery.web.controller.v2;
+package com.futuristic.brewery.service.v2;
 
 import com.futuristic.brewery.service.v2.BeerServiceV2;
 import com.futuristic.brewery.web.model.v2.BeerDtoV2;
