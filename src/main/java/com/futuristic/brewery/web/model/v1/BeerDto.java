@@ -1,4 +1,4 @@
-package com.futuristic.brewery.web.model;
+package com.futuristic.brewery.web.model.v1;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +11,13 @@ import java.util.UUID;
  * aditya created on 24/01/20
  */
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class CustomerDto {
+@AllArgsConstructor
+@Builder
+public class BeerDto {
 
-    private String name;
     private UUID id;
+    private String beerName;
+    private String beerStyle;
+    private Long upc;
 }

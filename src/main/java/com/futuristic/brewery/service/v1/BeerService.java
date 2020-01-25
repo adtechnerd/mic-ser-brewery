@@ -1,6 +1,6 @@
-package com.futuristic.brewery.service;
+package com.futuristic.brewery.service.v1;
 
-import com.futuristic.brewery.web.model.BeerDto;
+import com.futuristic.brewery.web.model.v1.BeerDto;
 
 import java.util.UUID;
 

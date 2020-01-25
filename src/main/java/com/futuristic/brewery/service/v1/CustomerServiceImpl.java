@@ -1,6 +1,6 @@
-package com.futuristic.brewery.service;
+package com.futuristic.brewery.service.v1;
 
-import com.futuristic.brewery.web.model.CustomerDto;
+import com.futuristic.brewery.web.model.v1.CustomerDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

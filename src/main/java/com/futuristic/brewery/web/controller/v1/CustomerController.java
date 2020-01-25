@@ -1,7 +1,7 @@
-package com.futuristic.brewery.web.controller;
+package com.futuristic.brewery.web.controller.v1;
 
-import com.futuristic.brewery.service.CustomerService;
-import com.futuristic.brewery.web.model.CustomerDto;
+import com.futuristic.brewery.service.v1.CustomerService;
+import com.futuristic.brewery.web.model.v1.CustomerDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
