@@ -1,6 +1,7 @@
 package com.futuristic.brewery.service;
 
 import com.futuristic.brewery.web.model.BeerDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -9,6 +10,7 @@ import java.util.UUID;
  * aditya created on 24/01/20
  */
 @Service
+@Slf4j
 public class BeerServiceImpl implements BeerService {
     @Override
     public BeerDto getBeerById(UUID beerId) {
@@ -23,5 +25,10 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public void updateBeer(UUID beerId, BeerDto beerDto) {
         //todo: add implementation
+    }
+
+    @Override
+    public void deleteById(UUID beerId) {
+        log.debug("Deleting entity");
     }
 }
