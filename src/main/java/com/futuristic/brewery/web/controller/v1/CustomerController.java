@@ -41,10 +41,10 @@ public class CustomerController {
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping
+    @DeleteMapping({"/{id}"})
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCustomer(@RequestBody CustomerDto customerDto) {
-        customerService.deleteCustomer(customerDto);
+    public void deleteCustomer(@PathVariable("id") UUID id) {
+        customerService.deleteCustomer(id);
     }
 
 }

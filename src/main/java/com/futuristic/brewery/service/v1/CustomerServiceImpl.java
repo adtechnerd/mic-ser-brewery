@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(CustomerDto customerDto) {
+    public void deleteCustomer(UUID id) {
         log.debug("deleting customer");
     }
 }
