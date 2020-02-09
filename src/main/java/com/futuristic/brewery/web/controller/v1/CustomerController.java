@@ -7,6 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -28,7 +33,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity addCustomer(@RequestBody CustomerDto customerDto) {
+    public ResponseEntity addCustomer(@Valid @RequestBody CustomerDto customerDto) {
         CustomerDto savedCustomer = customerService.addCustomer(customerDto);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "api/v1/customer"+savedCustomer.getId().toString());
@@ -36,7 +41,7 @@ public class CustomerController {
     }
 
     @PutMapping({"/{id}"})
-    public ResponseEntity updateCustomer(@PathVariable("id") UUID id, @RequestBody CustomerDto customerDto) {
+    public ResponseEntity updateCustomer(@PathVariable("id") UUID id, @Valid @RequestBody CustomerDto customerDto) {
         CustomerDto dto = customerService.updateCustomer(id, customerDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
